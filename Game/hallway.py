@@ -55,5 +55,10 @@ while(area == "End of hallway"):
     else:
         print("That is not an option")
 
-    
+if(area == "Left Room"):
+    print("Loading Left Room")
+elif(area == "Middle Room"):
+    print("Loading Middle Room")
+else:
+    print("Loading Right Room")
 
