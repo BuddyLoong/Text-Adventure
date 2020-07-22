@@ -1,12 +1,9 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Jul 20 23:10:08 2020
+import jail_cell
 
-@author: buddh
-"""
 #This is the print statment for the title screen
 print("Text Adventure")
 print("Options:\n1.Start\n2.Option\n3.Exit")
+
 #user_option is a variable that stores.
 #input is the user's input
 #int and str are used to convert a string or intreger.
@@ -17,6 +14,7 @@ user_option = int(user_option)
 #Different input will print out different statements
 if (user_option == 1):
     print("You wake up in a dark cell.")
+    jail_cell.start_game()
 elif (user_option == 2):
     print("1.Text Colour")
     print("2.Text Size")
@@ -24,4 +22,4 @@ elif (user_option == 2):
 elif (user_option == 3):
     print("Exit Game")
 else:
-    print("This is not an Option?")
+    print("This is not an Option")
