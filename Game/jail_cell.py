@@ -1,4 +1,6 @@
-import hallway   
+import hallway
+import sys
+sys.dont_write_bytecode = True #Don't produce pycache folder
 def start_game():
 
     inventory = {"Cell_key":False,"Torch":False,"Door_key":False,"Sword":False}

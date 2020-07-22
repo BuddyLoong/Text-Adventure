@@ -1,4 +1,6 @@
 import hallway
+import sys
+sys.dont_write_bytecode = True #Don't produce pycache folder
 def left_room_entry():
     area = "Left Room"
     inventory = {"Cell_key":True,"Torch":True,"Door_key":False,"Sword":False}

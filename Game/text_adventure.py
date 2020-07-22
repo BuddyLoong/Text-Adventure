@@ -1,4 +1,6 @@
 import jail_cell
+import sys
+sys.dont_write_bytecode = True #Don't produce pycache folder
 
 #This is the print statment for the title screen
 print("Text Adventure")

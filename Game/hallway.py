@@ -1,4 +1,6 @@
 import left_room, right_room, jail_cell
+import sys
+sys.dont_write_bytecode = True #Don't produce pycache folder
 action1 = str()
 def hallway_options():
     area = "End of Hallway"
