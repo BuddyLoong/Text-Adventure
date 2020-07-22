@@ -75,11 +75,11 @@ def jail_cell_return():
              print ("The door is locked.")
             elif (user_input == 4 and inventory["Cell_key"] == False):
              print("While searching through the rubble you find a rusty key.")
-            inventory["Cell_key"] = True
+             inventory["Cell_key"] = True
             elif (user_input == 4 and inventory["Cell_key"] == True):
              print ("You have already found the key.")
             elif (user_input == 5):
-            print ("You can see outside through the window. Sadly the bars are stopping you from going through.")
+             print ("You can see outside through the window. Sadly the bars are stopping you from going through.")
     #The else statement is used if the user does not follow any of the options. For example, type 5
             else:
-            print ("This is not an option")
+             print ("This is not an option")

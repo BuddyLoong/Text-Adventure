@@ -1,13 +1,35 @@
 import left_room, right_room, jail_cell
 action1 = str()
+def hallway_options():
+    area = "End of Hallway"
+    while(area == "End of hallway"):
+        print("You see three doors. Which do you want to go through?")   
+        action2 = input("Left Door\tMiddle Door\tRight Door\n(l\\m\\r)\n")
+        if(action2 == "l"):
+            print("You enter the left door")
+            area = "Left Room"
+            left_room.left_room_entry()
+            #PLACEHOLDER: enter left_room.py here
+        elif(action2 == "m"):
+            print("You enter the middle room")
+            area = "Middle Room"
+            #PLACEHOLDER: enter middle_room.py here
+        elif(action2 == "r"):
+            print("You enter the right room")
+            area = "Right Room"
+            right_room.right_room_entry()
+            #PLACEHOLDER: enter right_room.py here
+        else:
+            print("That is not an option")
+    
 def hallway_entry():
     
     inventory = {"Cell_key":True,"Torch":False, "Door_key":False} #add key1, key2 and sword later
     area = "Hallway" #Change to Jail cell or room
-    user_input = input("What do you want to do?")
-    user_input = int(user_input)
-    
     print("You step into a dark hallway")
+    # user_input = input("What do you want to do?")
+    # user_input = int(user_input)
+    
     
     while(area == "Hallway"):
         print("1.Go down the dark hallway.\t2.Grab torch.\t3.Go back into the jail cell.")
@@ -30,11 +52,10 @@ def hallway_entry():
         elif(action1 == 1 and inventory["Torch"] == True):
             print("You walk down the hallway")
             area = "End of hallway"
-            hallway_options()
+            print("You see three doors. Which do you want to go through?")
+
         else:
             print("That is not an option")
-
-    hallway_options()
 
     if(action1 == 3):
         #PLACEHOLDER: Go back to room
@@ -44,37 +65,7 @@ def hallway_entry():
     else:
         print("You are at the end of the hallway")
         area = "End of hallway"
-
-def hallway_options():
-    user_input = input("What do you want to do?")
-    user_input = int(user_input)
-    area = "End of Hallway"
-    while(area == "End of hallway"):
-        print("You see three doors. Which do you want to go through?")   
-        action2 = input("Left Door\tMiddle Door\tRight Door\n(l\\m\\r)\n")
-        if(action2 == "l"):
-            print("You enter the left door")
-            area = "Left Room"
-            left_room.left_room_entry()
-            #PLACEHOLDER: enter left_room.py here
-        elif(action2 == "m"):
-            print("You enter the middle room")
-            area = "Middle Room"
-            #PLACEHOLDER: enter middle_room.py here
-        elif(action2 == "r"):
-            print("You enter the right room")
-            area = "Right Room"
-            right_room.right_room_entry()
-            #PLACEHOLDER: enter right_room.py here
-        else:
-            print("That is not an option")
-    
-    if(area == "Left Room"):
-        print("Loading Left Room")
-    elif(area == "Middle Room"):
-        print("Loading Middle Room")
-    else:
-        print("Loading Right Room")
+        hallway_options()
     
 
 
