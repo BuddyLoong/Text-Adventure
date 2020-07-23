@@ -1,7 +1,8 @@
-import left_room, right_room, jail_cell
+import left_room, right_room,middle_room, jail_cell
 import sys
 sys.dont_write_bytecode = True #Don't produce pycache folder
 action1 = str()
+inventory = {"Cell_key":True,"Torch":False, "Door_key":False} #add key1, key2 and sword later
 def hallway_options():
     area = "End of Hallway"
     while(area == "End of Hallway"):
@@ -12,12 +13,15 @@ def hallway_options():
             area = "Left Room"
             left_room.left_room_entry()
             #PLACEHOLDER: enter left_room.py here
-        elif(action2 == "m"):
+        elif (action2 == "m" and inventory["Door_key"] == False):
+            print("The Door is locked.\nMaybe one of the other rooms have the key.")
+        elif (action2 == "m" and inventory["Door_key"] == True):
             print("You enter the middle room")
             area = "Middle Room"
             middle_room.middle_room_entry()
             #PLACEHOLDER: enter middle_room.py here
-        elif(action2 == "r"):
+
+        elif (action2 == "r"):
             print("You enter the right room")
             area = "Right Room"
             right_room.right_room_entry()
@@ -27,7 +31,7 @@ def hallway_options():
     
 def hallway_entry():
     
-    inventory = {"Cell_key":True,"Torch":False, "Door_key":False} #add key1, key2 and sword later
+    # inventory = {"Cell_key":True,"Torch":False, "Door_key":False} #add key1, key2 and sword later
     area = "Hallway" #Change to Jail cell or room
     print("You step into a dark hallway")
     # user_input = input("What do you want to do?")
