@@ -1,9 +1,10 @@
 import left_room, right_room,middle_room, jail_cell
 import sys
 sys.dont_write_bytecode = True #Don't produce pycache folder
+inventory = {"Cell_key":False,"Torch":False,"Door_key":False,"Sword":False}
 action1 = str()
 inventory = {"Cell_key":True,"Torch":False, "Door_key":False} #add key1, key2 and sword later
-def hallway_options():
+def hallway_options(inventory):
     area = "End of Hallway"
     while(area == "End of Hallway"):
         print("You see three doors. Which do you want to go through?")   
@@ -11,25 +12,28 @@ def hallway_options():
         if(action2 == "l"):
             print("You enter the left door")
             area = "Left Room"
-            left_room.left_room_entry()
+            left_room.left_room_entry(inventory)
+            return inventory
             #PLACEHOLDER: enter left_room.py here
         elif (action2 == "m" and inventory["Door_key"] == False):
             print("The Door is locked.\nMaybe one of the other rooms have the key.")
         elif (action2 == "m" and inventory["Door_key"] == True):
             print("You enter the middle room")
             area = "Middle Room"
-            middle_room.middle_room_entry()
+            middle_room.middle_room_entry(inventory)
+            return inventory
             #PLACEHOLDER: enter middle_room.py here
 
         elif (action2 == "r"):
             print("You enter the right room")
             area = "Right Room"
-            right_room.right_room_entry()
+            right_room.right_room_entry(inventory)
+            return inventory
             #PLACEHOLDER: enter right_room.py here
         else:
             print("That is not an option")
     
-def hallway_entry():
+def hallway_entry(inventory):
     
     # inventory = {"Cell_key":True,"Torch":False, "Door_key":False} #add key1, key2 and sword later
     area = "Hallway" #Change to Jail cell or room
@@ -65,11 +69,13 @@ def hallway_entry():
         #PLACEHOLDER: Go back to room
         print("You are back in your jail cell, what do you want to do?")
         print("Exiting now")
-        jail_cell.jail_cell_return()
+        jail_cell.jail_cell_return(inventory)
+        return inventory
     else:
         print("You are at the end of the hallway")
         area = "End of hallway"
-        hallway_options()
+        hallway_options(inventory)
+        return inventory
 
 
     

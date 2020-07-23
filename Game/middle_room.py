@@ -1,7 +1,7 @@
 import sys, hallway
 sys.dont_write_bytecode = True #Don't produce pycache folder
-def middle_room_entry():
-    inventory = {"Cell_key":False,"Torch":False,"Door_key":False,"Sword":False}
+def middle_room_entry(inventory):
+    
     area = "Middle Room"
     print ("You enter a long hallway. \nAt the end of the hallway you can see an exit...\nHowever, there is a troll blocking the exit")
     print ("What do you want to do")
@@ -12,7 +12,7 @@ def middle_room_entry():
     user_action = input()
     user_action = int(user_action)
 
-    while (user_action == "" or 1):
+    while (user_action == 1):
         if (user_action == 1):
             print ("You look around. There is only an exit and a troll.")
             print ("What do you want to do")

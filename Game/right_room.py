@@ -1,7 +1,9 @@
 import hallway
 import sys
 sys.dont_write_bytecode = True #Don't produce pycache folder
-def right_room_entry():
+inventory = {"Cell_key":False,"Torch":False,"Door_key":False,"Sword":False}
+def right_room_entry(inventory):
+       
     area ="Right room"
     inventory = {"Cell_key":True,"Torch":True,"Door_key":False,"Sword":False}
     
@@ -26,6 +28,7 @@ def right_room_entry():
             print ("You are now back in the hallway.")
             area = "End of Hallway"
             print (area)
-            hallway.hallway_options()
+            hallway.hallway_options(inventory)
+            return inventory
         else:
             print ("This is not an option.")

@@ -32,7 +32,7 @@ def start_game():
             if (user_input == 3 and inventory["Cell_key"] == True):
                 print ("The key fits perfectly and the door opens")
                 area = "Hallway"
-                hallway.hallway_entry()
+                hallway.hallway_entry(inventory)
             elif (user_input == 3 and inventory["Cell_key"] == False):
                 print ("The door is locked.")
             elif (user_input == 4 and inventory["Cell_key"] == False):
@@ -46,7 +46,7 @@ def start_game():
             else:
                 print ("This is not an option")
 
-def jail_cell_return():        
+def jail_cell_return(inventory):        
     inventory = {"Cell_key":True,"Torch":False,"Door_key":False,"Sword":False}
     area = "Jail Cell"
     
@@ -72,7 +72,8 @@ def jail_cell_return():
             if (user_input == 3 and inventory["Cell_key"] == True):
                 print ("The key fits perfectly and the door opens")
                 area = "Hallway"
-                hallway.hallway_entry()
+                hallway.hallway_entry(inventory)
+                return inventory
             elif (user_input == 3 and inventory["Cell_key"] == False):
              print ("The door is locked.")
             elif (user_input == 4 and inventory["Cell_key"] == False):
