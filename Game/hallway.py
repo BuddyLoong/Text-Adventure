@@ -4,7 +4,7 @@ sys.dont_write_bytecode = True #Don't produce pycache folder
 action1 = str()
 def hallway_options():
     area = "End of Hallway"
-    while(area == "End of hallway"):
+    while(area == "End of Hallway"):
         print("You see three doors. Which do you want to go through?")   
         action2 = input("Left Door\tMiddle Door\tRight Door\n(l\\m\\r)\n")
         if(action2 == "l"):
@@ -15,6 +15,7 @@ def hallway_options():
         elif(action2 == "m"):
             print("You enter the middle room")
             area = "Middle Room"
+            middle_room.middle_room_entry()
             #PLACEHOLDER: enter middle_room.py here
         elif(action2 == "r"):
             print("You enter the right room")
@@ -54,7 +55,7 @@ def hallway_entry():
         elif(action1 == 1 and inventory["Torch"] == True):
             print("You walk down the hallway")
             area = "End of hallway"
-            print("You see three doors. Which do you want to go through?")
+            # print("You see three doors. Which do you want to go through?")
 
         else:
             print("That is not an option")
