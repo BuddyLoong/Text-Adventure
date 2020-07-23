@@ -1,6 +1,9 @@
-import jail_cell
 import sys
 sys.dont_write_bytecode = True #Don't produce pycache folder
+
+def import_jail_cell():
+    import jail_cell
+    jail_cell.start_game()
 
 #This is the print statment for the title screen
 print("Text Adventure")
@@ -16,7 +19,7 @@ user_option = int(user_option)
 #Different input will print out different statements
 if (user_option == 1):
     print("You wake up in a dark cell.")
-    jail_cell.start_game()
+    import_jail_cell()
 elif (user_option == 2):
     print("1.Text Colour")
     print("2.Text Size")

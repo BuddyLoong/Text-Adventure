@@ -1,8 +1,9 @@
-import hallway
-import sys
-sys.dont_write_bytecode = True #Don't produce pycache folder
-inventory = {"Cell_key":False,"Torch":False,"Door_key":False,"Sword":False}
+
+#inventory = {"Cell_key":False,"Torch":False,"Door_key":False,"Sword":False}
 def right_room_entry(inventory):
+    import hallway
+    import sys
+    sys.dont_write_bytecode = True #Don't produce pycache folder
        
     area ="Right room"
     inventory = {"Cell_key":True,"Torch":True,"Door_key":False,"Sword":False}

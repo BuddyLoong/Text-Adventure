@@ -1,7 +1,7 @@
-import hallway
-import sys
-sys.dont_write_bytecode = True #Don't produce pycache folder
 def start_game():
+    import hallway
+    import sys
+    sys.dont_write_bytecode = True #Don't produce pycache folder
 
     inventory = {"Cell_key":False,"Torch":False,"Door_key":False,"Sword":False}
     area = "Jail Cell"
@@ -47,6 +47,10 @@ def start_game():
                 print ("This is not an option")
 
 def jail_cell_return(inventory):        
+    import hallway
+    import sys
+    sys.dont_write_bytecode = True #Don't produce pycache folder
+
     inventory = {"Cell_key":True,"Torch":False,"Door_key":False,"Sword":False}
     area = "Jail Cell"
     
@@ -72,7 +76,7 @@ def jail_cell_return(inventory):
             if (user_input == 3 and inventory["Cell_key"] == True):
                 print ("The key fits perfectly and the door opens")
                 area = "Hallway"
-                hallway.hallway_entry(inventory)
+                hallway.hallway_options(inventory)
                 return inventory
             elif (user_input == 3 and inventory["Cell_key"] == False):
              print ("The door is locked.")

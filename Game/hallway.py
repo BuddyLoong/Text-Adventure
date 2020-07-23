@@ -1,10 +1,11 @@
-import left_room, right_room,middle_room, jail_cell
-import sys
-sys.dont_write_bytecode = True #Don't produce pycache folder
-inventory = {"Cell_key":False,"Torch":False,"Door_key":False,"Sword":False}
-action1 = str()
-inventory = {"Cell_key":True,"Torch":False, "Door_key":False} #add key1, key2 and sword later
+
+#inventory = {"Cell_key":False,"Torch":False,"Door_key":False,"Sword":False}
+#action1 = str()
+#inventory = {"Cell_key":True,"Torch":False, "Door_key":False} #add key1, key2 and sword later
 def hallway_options(inventory):
+    import left_room, right_room,middle_room, jail_cell
+    import sys
+    sys.dont_write_bytecode = True #Don't produce pycache folder
     area = "End of Hallway"
     while(area == "End of Hallway"):
         print("You see three doors. Which do you want to go through?")   
@@ -34,7 +35,8 @@ def hallway_options(inventory):
             print("That is not an option")
     
 def hallway_entry(inventory):
-    
+    import sys
+    sys.dont_write_bytecode = True #Don't produce pycache folder
     # inventory = {"Cell_key":True,"Torch":False, "Door_key":False} #add key1, key2 and sword later
     area = "Hallway" #Change to Jail cell or room
     print("You step into a dark hallway")
@@ -70,6 +72,7 @@ def hallway_entry(inventory):
         print("You are back in your jail cell, what do you want to do?")
         print("Exiting now")
         jail_cell.jail_cell_return(inventory)
+        area == "Jail_Cell"
         return inventory
     else:
         print("You are at the end of the hallway")
